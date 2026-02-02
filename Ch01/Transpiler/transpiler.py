@@ -12,22 +12,32 @@ class Transpiler:
         cells: list[int] = [0] * 30000
         cell_index = 0
         instruction_index = 0
+
+        print("numbers: list[int] = [0] * 30000")
+        print("number_index = 0")
+
         # Keep going as long as there are potential instructions left
         while instruction_index < len(self.source_code):
             instruction = self.source_code[instruction_index]
             match instruction:
                 case ">":
                     cell_index += 1
+                    print("number_index += 1")
                 case "<":
                     cell_index -= 1
+                    print("number_index -= 1")
                 case "+":
                     cells[cell_index] = clamp0_255_wraparound(cells[cell_index] + 1)
+                    print("numbers[number_index] = numbers[number_index] + 1")
                 case "-":
                     cells[cell_index] = clamp0_255_wraparound(cells[cell_index] - 1)
+                    print("numbers[number_index] = numbers[number_index] - 1")
                 case ".":
                     print(chr(cells[cell_index]), end="", flush=True)
+                    print("print(chr(numbers[number_index]))")
                 case ",":
                     cells[cell_index] = clamp0_255_wraparound(int(input()))
+                    print("numbers[number_index] = int(input())")
                 case "[":
                     if cells[cell_index] == 0:
                         instruction_index = self.find_bracket_match(
