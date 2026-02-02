@@ -5,5 +5,5 @@
 - 저자의 GitHub 링크: [davecom/ComputerScienceFromScratch](https://github.com/davecom/ComputerScienceFromScratch)
 
 ```powershell
-ComputerScienceFromScratch> python -m Brainfuck Brainfuck\Examples\fibonacci.bf
+ComputerScienceFromScratch\Ch01> python -m Brainfuck Examples\fibonacci.bf
 ```
