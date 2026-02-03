@@ -1,12 +1,12 @@
-numbers: list[int] = [0] * 30000
+numbers: list[int] = [0] * 10
 number_index = 0
 numbers[number_index] = int(input())
 number_index += 1
 numbers[number_index] = int(input())
-idx_max = numbers[number_index]
-for _ in range(idx_max):
+max_idx = numbers[number_index]
+for _ in range(max_idx):
     number_index -= 1
     value = numbers[number_index]
-    print(chr(value), end="", flush=True)
+    print(chr(value), end='', flush=True)
     number_index += 1
     numbers[number_index] = numbers[number_index] - 1
